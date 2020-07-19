@@ -27,7 +27,7 @@ def convert(filename, output):
             file.save(os.path.join(app.config["STAGING_STACK"], label))
             #convert created file
             conv_result = pypandoc.convert_file(os.path.join(app.config["STAGING_STACK"], label), output)
-            response = make_response(jsonify({"data": conv_result}))
+            response = jsonify(conv_result)
 
         return response
 
